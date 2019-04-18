@@ -1,0 +1,24 @@
+<div class="container" class="card card-1">
+  <form>
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input
+        [(ngModel)]="name"
+        name="name"
+        type="text"
+        class="form-control"
+        id="name"
+        required
+      />
+      {{ name }}
+    </div>
+  </form>
+
+  <img src="{{ character[2] }}" id="image" />
+
+  <app-character
+    id="charComp"
+    (characterEvent)="character = $event"
+    [parentData]="name"
+  ></app-character>
+</div>
